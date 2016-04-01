@@ -10,10 +10,10 @@
  * @module sample
  * @since 1.0.0
  */
-define(['jquery', 'bootstrap'], function($){
+define(['jquery', 'bootstrap'], function($) {
 	var	$win	= $(window),
 		$doc	= $(document),
-		Fn		= function(){},
+		Fn		= function() {},
 		exports	= {};
 
 	/**
@@ -23,7 +23,7 @@ define(['jquery', 'bootstrap'], function($){
 	 * @param {string} param 参数
 	 * @return {none}
 	 */
-	exports.sample = function(param){
+	exports.sample = function(param) {
 		console.dir(param);
 	};
 
