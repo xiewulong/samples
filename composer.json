@@ -1,0 +1,21 @@
+{
+	"name": "xiewulong/samples",
+	"description": "xiewulong",
+	"keywords": ["xiewulong", "samples"],
+	"type": "library",
+	"license": "MIT",
+	"support": {
+		"issues": "https://github.com/xiewulong/samples/issues",
+		"wiki": "https://github.com/xiewulong/samples/wiki",
+		"source": "https://github.com/xiewulong/samples"
+	},
+	"authors": [
+		{
+			"name": "xiewulong",
+			"email": "xiewulong@vip.qq.com"
+		}
+    ],
+	"autoload": {
+		"psr-4": {"xiewulong\\samples\\": ""}
+	}
+}
