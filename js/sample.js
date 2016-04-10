@@ -35,7 +35,7 @@ define(['jquery', 'bootstrap'], function($) {
 	 * @param {object} options bootstrap模态框参数
 	 * @return {object}
 	 */
-	$.modal = function(html, options){
+	$.modal = function(html, options) {
 		return $(html).modal(options).on('shown.bs.modal', function() {
 			$(this).find('[autofocus=autofocus]').focus();
 		}).on('hidden.bs.modal', function() {
