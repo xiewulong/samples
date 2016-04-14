@@ -10,7 +10,7 @@
  * @module sample
  * @since 1.0.0
  */
-define(['jquery', 'bootstrap'], function($) {
+define(['jquery', 'config', 'bootstrap'], function($, config) {
 
 	var	$win	= $(window),
 		$doc	= $(document),
