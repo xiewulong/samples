@@ -27,6 +27,7 @@
 
 <!-- begin style -->
 <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/common.css" />
 <link rel="stylesheet" type="text/css" href="css/sample.css" />
 <!-- end style -->
 
@@ -36,20 +37,18 @@
 <!-- begin body -->
 <body>
 
-
-
 <!-- begin javascript -->
 <script type="text/javascript" src="https://requirejs.org/docs/release/2.2.0/minified/require.js"></script>
 <script type="text/javascript">
 require.config({
-	urlArgs: 'ver=1.0.0',
+	urlArgs: 'v=' + (+ new Date()),
 	baseUrl: 'js',
 	paths: {
 		jquery: 'https://code.jquery.com/jquery-latest.min',
 		bootstrap: 'https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min'
 	},
 	shim: {
-		bootstrap: {deps: ['jquery']}
+		bootstrap: ['jquery']
 	}
 });
 require(['sample'], function() {
