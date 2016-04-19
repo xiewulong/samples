@@ -56,6 +56,14 @@ define(['jquery', 'config', 'bootstrap'], function($, config) {
 		return config.api + action + exports.buldQuery(querys, action.indexOf('?') >= 0);
 	};
 
+	//获取元素在数组中的索引
+	exports.inArray = function(item, arr) {
+		for(var i = 0, len = arr.length; i < len; i++) {
+			if(item.toString() == arr[i].toString()) return i;
+		}
+		return -1;
+	};
+
 	/**
 	 * 开启模态框
 	 * @method $.modal
