@@ -17,6 +17,12 @@ define(function() {
 	//开发模式
 	exports.dev = true;
 
+	//网关
+	exports.api = '';
+
+	//应用路径
+	exports.path = '';
+
 	return exports;
 
 });

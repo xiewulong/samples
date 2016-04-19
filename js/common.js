@@ -28,6 +28,35 @@ define(['jquery', 'config', 'bootstrap'], function($, config) {
 	};
 
 	/**
+	 * 生成query
+	 * @method common.buldQuery
+	 * @since 1.0.0
+	 * @return {string}
+	 */
+	exports.buldQuery = function(querys, hasQuerys) {
+		var i, key,
+			_querys		= [];
+		if(querys) {
+			i = 0;
+			for(key in querys) {
+				_querys.push((!i && !hasQuerys ? '?' : '&') + key + '=' + querys[key]);
+				i++;
+			}
+		}
+		return _querys.join('');
+	};
+
+	//获取链接
+	exports.getUrl = function(action, querys) {
+		return config.path + action + exports.buldQuery(querys, action.indexOf('?') >= 0);
+	};
+
+	//获取请求链接
+	exports.getRequestUrl = function(action, querys) {
+		return config.api + action + exports.buldQuery(querys, action.indexOf('?') >= 0);
+	};
+
+	/**
 	 * 开启模态框
 	 * @method $.modal
 	 * @since 1.0.0
@@ -48,9 +77,10 @@ define(['jquery', 'config', 'bootstrap'], function($, config) {
 	 * @since 1.0.0
 	 */
 	$.ajaxSetup({
-		dataType: 'json',
+		//contentType: 'application/json',
 		//crossDomain: true,
 		//xhrFields: {withCredentials: true},
+		dataType: 'json',
 		error: function(xhr, status, error) {
 			console.log(error);
 		}
