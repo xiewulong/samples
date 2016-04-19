@@ -113,7 +113,7 @@ define(['jquery', 'config', 'bootstrap'], function($, config) {
 		//xhrFields: {withCredentials: true},
 		dataType: 'json',
 		error: function(xhr, status, error) {
-			console.log(error);
+			config.dev && console.log(error);
 		}
 	});
 
