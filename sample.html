@@ -40,7 +40,7 @@
 <!-- begin javascript -->
 <script type="text/javascript" src="https://requirejs.org/docs/release/2.2.0/minified/require.js"></script>
 <script type="text/javascript">
-require.config({
+require({
 	urlArgs: 'v=' + (+ new Date()),
 	baseUrl: 'js',
 	paths: {
@@ -50,8 +50,7 @@ require.config({
 	shim: {
 		bootstrap: ['jquery']
 	}
-});
-require(['sample'], function() {
+}, ['sample'], function() {
 	window.defined = require.s.contexts._.defined;
 });
 </script>
