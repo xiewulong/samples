@@ -31,6 +31,8 @@ define(['jquery', 'config', 'bootstrap'], function($, config) {
 	 * 生成query
 	 * @method common.buldQuery
 	 * @since 1.0.0
+	 * @param {object} querys 参数
+	 * @param {string} hasQuerys 动作中是否存在参数
 	 * @return {string}
 	 */
 	exports.buldQuery = function(querys, hasQuerys) {
@@ -46,17 +48,38 @@ define(['jquery', 'config', 'bootstrap'], function($, config) {
 		return _querys.join('');
 	};
 
-	//获取链接
+	/**
+	 * 获取链接
+	 * @method common.getUrl
+	 * @since 1.0.0
+	 * @param {string} action 运作
+	 * @param {object} querys 参数
+	 * @return {string}
+	 */
 	exports.getUrl = function(action, querys) {
 		return config.path + action + exports.buldQuery(querys, action.indexOf('?') >= 0);
 	};
 
-	//获取请求链接
+	/**
+	 * 获取请求链接
+	 * @method common.getRequestUrl
+	 * @since 1.0.0
+	 * @param {string} action 运作
+	 * @param {object} querys 参数
+	 * @return {string}
+	 */
 	exports.getRequestUrl = function(action, querys) {
 		return config.api + action + exports.buldQuery(querys, action.indexOf('?') >= 0);
 	};
 
-	//获取元素在数组中的索引
+	/**
+	 * 获取元素在数组中的索引
+	 * @method common.inArray
+	 * @since 1.0.0
+	 * @param {string} item 元素
+	 * @param {array} arr 数据
+	 * @return {int}
+	 */
 	exports.inArray = function(item, arr) {
 		for(var i = 0, len = arr.length; i < len; i++) {
 			if(item.toString() == arr[i].toString()) return i;
