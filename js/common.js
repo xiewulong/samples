@@ -29,13 +29,13 @@ define(['jquery', 'config', 'bootstrap'], function($, config) {
 
 	/**
 	 * 生成query
-	 * @method common.buldQuery
+	 * @method common.buildQuery
 	 * @since 1.0.0
 	 * @param {object} querys 参数
 	 * @param {string} hasQuerys 动作中是否存在参数
 	 * @return {string}
 	 */
-	exports.buldQuery = function(querys, hasQuerys) {
+	exports.buildQuery = function(querys, hasQuerys) {
 		var i, key,
 			_querys		= [];
 		if(querys) {
@@ -57,7 +57,7 @@ define(['jquery', 'config', 'bootstrap'], function($, config) {
 	 * @return {string}
 	 */
 	exports.getUrl = function(action, querys) {
-		return config.path + action + exports.buldQuery(querys, action.indexOf('?') >= 0);
+		return config.path + action + exports.buildQuery(querys, action.indexOf('?') >= 0);
 	};
 
 	/**
@@ -69,7 +69,7 @@ define(['jquery', 'config', 'bootstrap'], function($, config) {
 	 * @return {string}
 	 */
 	exports.getRequestUrl = function(action, querys) {
-		return config.api + action + exports.buldQuery(querys, action.indexOf('?') >= 0);
+		return config.api + action + exports.buildQuery(querys, action.indexOf('?') >= 0);
 	};
 
 	/**
