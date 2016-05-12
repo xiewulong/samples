@@ -20,19 +20,25 @@
 <!-- end ie modes -->
 
 <!-- begin mobile -->
-<!--
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,target-densitydpi=device-dpi" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <meta name="format-detection" content="telephone=no" />
--->
 <!-- end mobile -->
 
 <!-- begin css -->
 <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<!-- <link rel="stylesheet" type="text/css" href="css/non-responsive.css" /> -->
 <link rel="stylesheet" type="text/css" href="css/common.css" />
 <link rel="stylesheet" type="text/css" href="css/sample.css" />
 <!-- end css -->
+
+<!-- begin js -->
+<!--[if lt IE 9]>
+<script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<!-- end js -->
 
 </head>
 <!-- end head -->
@@ -47,8 +53,8 @@ require({
 	urlArgs: 'v=' + (+ new Date()),
 	baseUrl: 'js',
 	paths: {
-		jquery: 'https://code.jquery.com/jquery-latest.min',
-		bootstrap: 'https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min'
+		bootstrap: 'https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min',
+		jquery: 'https://code.jquery.com/jquery-latest.min'
 	},
 	shim: {
 		bootstrap: ['jquery']
