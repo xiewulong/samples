@@ -7,18 +7,18 @@
 
 /* Account for fixed navbar */
 body{padding-top:70px;padding-bottom:30px;}
-body.width-750,
-body.width-750 .navbar-fixed-top,
-body.width-750 .navbar-fixed-bottom{min-width:750px;}
-body.width-750 .container{width:750px;}
-body.width-970,
-body.width-970 .navbar-fixed-top,
-body.width-970 .navbar-fixed-bottom{min-width:970px;}
-body.width-970 .container{width:970px;}
-body.width-1170,
-body.width-1170 .navbar-fixed-top,
-body.width-1170 .navbar-fixed-bottom{min-width:1170px;}
-body.width-1170 .container{width:1170px;}
+body.x-width-750,
+body.x-width-750 .navbar-fixed-top,
+body.x-width-750 .navbar-fixed-bottom{min-width:750px;}
+body.x-width-750 .container{width:750px;}
+body.x-width-970,
+body.x-width-970 .navbar-fixed-top,
+body.x-width-970 .navbar-fixed-bottom{min-width:970px;}
+body.x-width-970 .container{width:970px;}
+body.x-width-1170,
+body.x-width-1170 .navbar-fixed-top,
+body.x-width-1170 .navbar-fixed-bottom{min-width:1170px;}
+body.x-width-1170 .container{width:1170px;}
 
 /* Don't let the lead text change font-size. */
 .lead{font-size:16px;}
