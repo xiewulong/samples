@@ -5,7 +5,7 @@
  * version:1.0.0
  */
 
-/* Account for fixed navbar */
+/* Account for fixed navbar and container */
 body.x-width-750,
 body.x-width-750 .navbar-fixed-top,
 body.x-width-750 .navbar-fixed-bottom{min-width:750px;}
@@ -18,6 +18,9 @@ body.x-width-1170,
 body.x-width-1170 .navbar-fixed-top,
 body.x-width-1170 .navbar-fixed-bottom{min-width:1170px;}
 body.x-width-1170 .container{width:1170px;}
+body.x-width-750 .container-fluid,
+body.x-width-970 .container-fluid,
+body.x-width-1170 .container-fluid{width:auto;}
 
 /* Don't let the lead text change font-size. */
 .lead{font-size:16px;}
