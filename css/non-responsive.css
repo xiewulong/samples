@@ -37,10 +37,6 @@ body.x-width-1170 .container-fluid{width:auto;}
 
 /* Reset the container */
 .container{max-width:none !important;}
-
-/* Demonstrate the grids */
-.col-xs-4{padding-top:15px;padding-bottom:15px;background-color:#eee;background-color:rgba(86,61,124,.15);border:1px solid #ddd;border:1px solid rgba(86,61,124,.2);}
-
 .container .navbar-header,
 .container .navbar-collapse{margin-right:0;margin-left:0;}
 
