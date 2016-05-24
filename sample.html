@@ -49,6 +49,12 @@
 <!-- begin js -->
 <script type="text/javascript" src="https://requirejs.org/docs/release/2.2.0/minified/require.js"></script>
 <script type="text/javascript">
+//微信环境判断
+document.addEventListener && document.addEventListener('WeixinJSBridgeReady', function() {
+	window.wechat = 1;
+}, false);
+
+//require依赖注入
 require({
 	urlArgs: 'v=' + (+ new Date()),
 	baseUrl: 'js',
@@ -59,8 +65,9 @@ require({
 	shim: {
 		bootstrap: ['jquery']
 	}
-}, ['sample'], function() {
-	window.defined = require.s.contexts._.defined;
+}, ['sample'], function(module) {
+	module.init('sample');	//初始化模块
+	window.defined = require.s.contexts._.defined;	//外放接口至window
 });
 </script>
 <!-- end js -->
