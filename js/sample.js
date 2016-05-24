@@ -24,10 +24,7 @@ define(['jquery', 'config', 'common'], function($, config, common) {
 	 * @return {none}
 	 */
 	exports.init = function(name) {
-
-		//运行微信jsApi功能
-		new common.wechat([]);
-
+		new common.wechat([]);	//运行微信jsApi功能
 	};
 
 	return exports;
