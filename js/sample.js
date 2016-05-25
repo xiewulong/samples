@@ -15,7 +15,8 @@ define(['jquery', 'config', 'common'], function($, config, common) {
 	var	$win	= $(window),
 		$doc	= $(document),
 		Fn		= function() {},
-		exports	= {};
+		exports	= {},
+		wechats	= {};
 
 	/**
 	 * 初始化模块
@@ -24,7 +25,7 @@ define(['jquery', 'config', 'common'], function($, config, common) {
 	 * @return {none}
 	 */
 	exports.init = function(name) {
-		new common.wechat([]);	//运行微信jsApi功能
+		new common.wechat(wechats);	//运行微信jsApi功能
 	};
 
 	return exports;
