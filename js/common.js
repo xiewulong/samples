@@ -10,7 +10,7 @@
  * @module common
  * @since 0.0.1
  */
-define(['jquery', 'config', 'bootstrap'], function($, config) {
+define(['jquery', 'config', 'wechat', 'bootstrap'], function($, config, wechat) {
 
 	var	$win	= $(window),
 		$doc	= $(document),
@@ -22,6 +22,7 @@ define(['jquery', 'config', 'bootstrap'], function($, config) {
 	 * @method common.getQuerys
 	 * @since 0.0.1
 	 * @return {object}
+	 * @example common.getQuerys();
 	 */
 	exports.getQuerys = function() {
 		return location.search ? new Function('return {' + location.search.substring(1).replace(/&/g, '",').replace(/=/g, ':"') + '"}')() : {};
@@ -34,6 +35,7 @@ define(['jquery', 'config', 'bootstrap'], function($, config) {
 	 * @param {object} querys 参数
 	 * @param {string} hasQuerys 动作中是否存在参数
 	 * @return {string}
+	 * @example common.buildQuery(querys, hasQuerys);
 	 */
 	exports.buildQuery = function(querys, hasQuerys) {
 		var i, key,
@@ -55,6 +57,7 @@ define(['jquery', 'config', 'bootstrap'], function($, config) {
 	 * @param {string} action 运作
 	 * @param {object} querys 参数
 	 * @return {string}
+	 * @example common.getUrl(action, querys);
 	 */
 	exports.getUrl = function(action, querys) {
 		return config.path + action + exports.buildQuery(querys, action.indexOf('?') >= 0);
@@ -67,6 +70,7 @@ define(['jquery', 'config', 'bootstrap'], function($, config) {
 	 * @param {string} action 运作
 	 * @param {object} querys 参数
 	 * @return {string}
+	 * @example common.getRequestUrl(action, querys);
 	 */
 	exports.getRequestUrl = function(action, querys) {
 		return config.api + action + exports.buildQuery(querys, action.indexOf('?') >= 0);
@@ -79,6 +83,7 @@ define(['jquery', 'config', 'bootstrap'], function($, config) {
 	 * @param {string} item 元素
 	 * @param {array} arr 数据
 	 * @return {int}
+	 * @example common.inArray(item, arr);
 	 */
 	exports.inArray = function(item, arr) {
 		for(var i = 0, len = arr.length; i < len; i++) {
@@ -94,8 +99,9 @@ define(['jquery', 'config', 'bootstrap'], function($, config) {
 	 * @param {string} html html结构
 	 * @param {object} options bootstrap模态框参数
 	 * @return {object}
+	 * @example common.modal(html, options);
 	 */
-	common.modal = function(html, options) {
+	exports.modal = function(html, options) {
 		return $(html).modal(options).on('shown.bs.modal', function() {
 			$(this).find('[autofocus=autofocus]').focus();
 		}).on('hidden.bs.modal', function() {
@@ -116,43 +122,6 @@ define(['jquery', 'config', 'bootstrap'], function($, config) {
 			config.dev && console.log(error);
 		}
 	});
-
-	/**
-	 * 运行微信jsApi功能
-	 * @method common.wechat
-	 * @since 0.0.1
-	 * @param {array} exps 注册方法集合
-	 * @return {none}
-	 */
-	exports.wechat = function(exps) {
-		var _this = this;
-		this.exports = ['common'].concat(exps || []);
-		window.wechat ? this.init() : $doc.on('WeixinJSBridgeReady', function() {
-			_this.init();
-		});
-	};
-
-	/**
-	 * 运行注册方法
-	 * @method common.wechat.init
-	 * @since 0.0.1
-	 * @return {none}
-	 */
-	exports.wechat.prototype.init = function() {
-		for(var export, i = 0, len = this.exports.length; i < len; i++) {
-			(export = this[this.exports[i]]) && export();
-		}
-	}
-
-	/**
-	 * 公共注册方法
-	 * @method common.wechat.common
-	 * @since 0.0.1
-	 * @return {none}
-	 */
-	exports.wechat.prototype.common = function() {
-
-	}
 
 	return exports;
 
