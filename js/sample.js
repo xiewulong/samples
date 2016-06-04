@@ -27,7 +27,7 @@ define(['jquery', 'config', 'common'], function($, config, common) {
 	 * @example sample.init(page, options);
 	 */
 	exports.init = function(page, options) {
-
+		new common.init(page);
 	};
 
 	return exports;

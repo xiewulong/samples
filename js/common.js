@@ -123,6 +123,18 @@ define(['jquery', 'config', 'wechat', 'bootstrap'], function($, config, wechat) 
 		}
 	});
 
+	/**
+	 * 公共初始化
+	 * @method common.init
+	 * @since 0.0.1
+	 * @param {string} page 页面
+	 * @return {none}
+	 * @example common.init(page);
+	 */
+	exports.init = function(page) {
+
+	};
+
 	return exports;
 
 });
