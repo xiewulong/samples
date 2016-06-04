@@ -119,7 +119,7 @@ define(['jquery', 'config', 'wechat', 'bootstrap'], function($, config, wechat) 
 		//xhrFields: {withCredentials: true},
 		dataType: 'json',
 		error: function(xhr, status, error) {
-			config.dev && console.log(error);
+			config.debug && console.log(error);
 		}
 	});
 
