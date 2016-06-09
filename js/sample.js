@@ -18,6 +18,17 @@ define(['jquery', 'config', 'common'], function($, config, common) {
 		exports	= {};
 
 	/**
+	 * sample
+	 * @method common.init.prototype.sample
+	 * @since 0.0.1
+	 * @return {none}
+	 * @example this.sample();
+	 */
+	common.init.prototype.sample = function() {
+		
+	};
+
+	/**
 	 * 初始化模块
 	 * @method sample.init
 	 * @since 0.0.1

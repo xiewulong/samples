@@ -124,7 +124,7 @@ define(['jquery', 'config', 'wechat', 'bootstrap'], function($, config, wechat) 
 	});
 
 	/**
-	 * 公共初始化
+	 * 初始化
 	 * @method common.init
 	 * @since 0.0.1
 	 * @param {string} page 页面
@@ -132,6 +132,18 @@ define(['jquery', 'config', 'wechat', 'bootstrap'], function($, config, wechat) 
 	 * @example common.init(page);
 	 */
 	exports.init = function(page) {
+		this.common && this.common();
+		this[page] && this[page]();
+	};
+
+	/**
+	 * 公共
+	 * @method common.init.prototype.common
+	 * @since 0.0.1
+	 * @return {none}
+	 * @example this.common();
+	 */
+	exports.init.prototype.common = function() {
 
 	};
 
