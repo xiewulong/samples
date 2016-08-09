@@ -2,14 +2,9 @@
  * config
  * xiewulong <xiewulong@vip.qq.com>
  * create: 2016/4/14
- * version: 0.0.1
+ * since: 0.0.1
  */
 
-/**
- * config module
- * @module config
- * @since 0.0.1
- */
 define(function() {
 
 	var exports	= {};

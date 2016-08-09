@@ -2,14 +2,9 @@
  * common
  * xiewulong <xiewulong@vip.qq.com>
  * create: 2016/4/1
- * version: 0.0.1
+ * since: 0.0.1
  */
 
-/**
- * common module
- * @module common
- * @since 0.0.1
- */
 define(['jquery', 'config', 'wechat', 'bootstrap'], function($, config, wechat) {
 
 	var	$win	= $(window),
@@ -102,6 +97,25 @@ define(['jquery', 'config', 'wechat', 'bootstrap'], function($, config, wechat) 
 	 * @example common.modal(html, options);
 	 */
 	exports.modal = function(html, options) {
+		// html sample
+		// '<div class="modal fade">' +
+		// 	'<div class="modal-dialog">' +
+		// 		'<div class="modal-content">' +
+		// 			'<div class="modal-header">' +
+		// 				'<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		// 				'<h4 class="modal-title">Modal title</h4>' +
+		// 			'</div>' +
+		// 			'<div class="modal-body">' +
+		// 				'<p>One fine body&hellip;</p>' +
+		// 			'</div>' +
+		// 			'<div class="modal-footer">' +
+		// 				'<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>' +
+		// 				'<button type="button" class="btn btn-primary">Save changes</button>' +
+		// 			'</div>' +
+		// 		'</div>' +
+		// 	'</div>' +
+		// '</div>';
+
 		return $(html).modal(options).on('shown.bs.modal', function() {
 			$(this).find('[autofocus=autofocus]').focus();
 		}).on('hidden.bs.modal', function() {

@@ -2,14 +2,9 @@
  * sample
  * xiewulong <xiewulong@vip.qq.com>
  * create: 2016/4/1
- * version: 0.0.1
+ * since: 0.0.1
  */
 
-/**
- * sample module
- * @module sample
- * @since 0.0.1
- */
 define(['jquery', 'config', 'common'], function($, config, common) {
 
 	var	$win	= $(window),
@@ -25,7 +20,7 @@ define(['jquery', 'config', 'common'], function($, config, common) {
 	 * @example this.sample();
 	 */
 	common.init.prototype.sample = function() {
-		
+
 	};
 
 	/**
