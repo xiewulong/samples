@@ -132,6 +132,7 @@ define(['jquery', 'config', 'wechat', 'bootstrap'], function($, config, wechat) 
 		//crossDomain: true,
 		//xhrFields: {withCredentials: true},
 		dataType: 'json',
+		cache: false,
 		error: function(xhr, status, error) {
 			config.debug && console.log(error);
 		}
